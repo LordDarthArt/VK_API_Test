@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txtInputId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+            <EditText
+                android:id="@+id/txtId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="VK ID"
+                android:inputType="textPersonName"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txtInputCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txtInputId"
+            app:layout_constraintTop_toBottomOf="@+id/txtInputId">
+            <EditText
+                android:id="@+id/txtCount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="Notes Count (up to 100)"
+                android:inputType="textPersonName"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/btnLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtInputCount"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+            app:layout_constraintStart_toEndOf="@+id/txtInputId"
+            app:layout_constraintTop_toTopOf="@+id/txtInputId">
+
+            <Button
+                android:id="@+id/btnShow"
+                style="@style/buttonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/shape"
+                android:enabled="false"
+                android:singleLine="true"
+                android:text="Показать"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutCountResult"></View>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayoutCountResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@+id/view2">
+
+        <TextView
+            android:id="@+id/txtResultCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/background_light"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"></View>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/consLayRV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fafafa"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></android.support.v7.widget.RecyclerView>
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
